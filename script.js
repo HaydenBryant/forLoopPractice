@@ -1,30 +1,38 @@
+function myFunction(){
+
+
 const numbers = [67, 80, 65, 79, 86, 66, 75, 71, 81, 69, 90, 79, 68, 65, 73, 88];
 
 //#1
 //for
-ascii = [];
+var alphFor = document.getElementById("alphFor").innerHTML + '';
 
 for (var i = 0; i < numbers.length; i++){
-    ascii.push(String.fromCharCode(numbers[i]));
+    alphFor += (String.fromCharCode(numbers[i]) + ', ');
 }
+document.getElementById("alphFor").innerHTML = alphFor;
 
+
+var alphForEach = document.getElementById("alphForEach").innerHTML + '';
 //forEach
 numbers.forEach((number) => {
-    console.log(String.fromCharCode(number));
+    alphForEach += (String.fromCharCode(number) + ", ");
 })
+document.getElementById("alphForEach").innerHTML = alphForEach;
+
 
 //map
 numbers.map((number) => {
-    return(String.fromCharCode(number));
+    document.getElementById("alphMap").innerHTML += (String.fromCharCode(number) + ", ");
 })
 
 
 //#2
-numbers.filter(number => number > 72 && number <= 88)
+document.getElementById("numGreatLess").innerHTML = numbers.filter(number => number > 72 && number <= 88)
 
 
 //#3
-numbers.reduce(
+document.getElementById("numProduct").innerHTML = numbers.reduce(
     ( accumulator, currentValue ) => accumulator * currentValue,
   );
 
@@ -41,3 +49,5 @@ numbers.reduce(
 
 // 3. Display the product of all numbers using reduce
 // Answer:
+
+}
